@@ -21,10 +21,11 @@ def find_all_paths(row, col, lab, direction, path):
         lab[row][col] = '-'
     path.pop()
 
+
 rows = int(input())
 columns = int(input())
 lab_array = []
 for _ in range(rows):
     lab_array.append(list(input()))
 
-    find_all_paths(0,0,lab_array,'',[])
+    find_all_paths(0, 0, lab_array, '', [])
