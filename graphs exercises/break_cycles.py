@@ -7,6 +7,8 @@ def dfs(node, destination, graph, visited):
 
     for child in graph[node]:
         dfs(child, destination, graph, visited)
+
+
 def path_exists(source, destination, graph):
     visited = set()
     dfs(source, destination, graph, visited)
@@ -26,7 +28,7 @@ for _ in range(nodes):
         edges.append((node, child))
 
 removed_edges = []
-#         sort by increasing
+#         sort by increasing order
 for source, destination in sorted(edges, key=lambda x: (x[0], x[1])):
     if destination not in graph[source] or source not in graph[destination]:
         continue
