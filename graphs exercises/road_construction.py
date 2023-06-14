@@ -1,7 +1,7 @@
 def dfs(node, graph, visited):
     if visited[node]:
         return
-    visited[node]  = True
+    visited[node] = True
 
     for child in graph[node]:
         dfs(child, graph, visited)
@@ -34,5 +34,5 @@ for first, second in edges:
     graph[second].append(first)
 
 print('Important streets:')
-for first,second in important_streets:
-    print(first,second)
+for first, second in important_streets:
+    print(first, second)
