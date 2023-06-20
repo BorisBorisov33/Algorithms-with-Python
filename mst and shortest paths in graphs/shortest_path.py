@@ -14,10 +14,10 @@ destination_node = int(input())
 
 visited = [False] * (nodes + 1)
 parent = [None] * (nodes + 1)
-
+print(visited)
 visited[start_node] = True
 queue = deque([start_node])
-
+# print(queue)
 while queue:
     node = queue.popleft()
     if node == destination_node:
