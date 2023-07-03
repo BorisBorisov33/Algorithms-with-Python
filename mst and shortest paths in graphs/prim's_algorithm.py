@@ -11,7 +11,6 @@ class Edge:
         return self.weight > other.weight
 
 
-
 def prim(node, graph, forest, forest_edges):
     forest.add(node)
 
@@ -51,7 +50,6 @@ for _ in range(edges):
 
 forest = set()
 forest_edges = []
-
 
 for node in graph:
     if node in forest:
