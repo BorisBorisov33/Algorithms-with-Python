@@ -1,4 +1,5 @@
 def draw_figure(n):
+
     if n == 0:
         return
 
@@ -8,4 +9,4 @@ def draw_figure(n):
 
 
 n = int(input())
-print(draw_figure(n))
+draw_figure(n)
