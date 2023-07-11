@@ -26,6 +26,6 @@ for row in range(rows):
         if size == 0:
             continue
         areas.append((row, col, size))
-print(f'Total areas found:{len(areas)}')
-for index, area in enumerate(sorted(areas,key=lambda a:a[2])):
-    print(f'Area{index + 1} at {area[0]}, {area[1]}, {area[2]} ')
+print(f'Total areas found: {len(areas)}')
+for index, area in enumerate(sorted(areas, key=lambda a: a[2],reverse=True)):
+    print(f'Area #{index + 1} at ({area[0]}, {area[1]}), size: {area[2]} ')

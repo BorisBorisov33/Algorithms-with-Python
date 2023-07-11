@@ -1,5 +1,5 @@
 def count_all_paths(row, col, rows, cols):
-    if row >= rows or  col >= cols:
+    if row >= rows or col >= cols:
         return 0
     if row == rows - 1 and col == cols - 1:
         return 1
