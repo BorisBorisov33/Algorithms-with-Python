@@ -5,4 +5,4 @@ for i in range(1, len(nums)):
         if nums[j] < nums[j - 1]:
             nums[j], nums[j - 1] = nums[j - 1], nums[j]
 
-print(nums)
+print(*nums, sep=' ')
