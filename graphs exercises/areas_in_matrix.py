@@ -37,4 +37,4 @@ for row in range(rows):
         total_areas += 1
 print(f'Areas: {total_areas}')
 for area, size in sorted(areas.items()):
-    print(f'Letter {area} -> {size}')
+    print(f"Letter '{area}' -> {size}")

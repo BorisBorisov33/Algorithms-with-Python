@@ -7,7 +7,7 @@ def dfs(node, graph, visited, cycles):
     cycles.add(node)
 
     for child in graph[node]:
-        dfs(node, child, visited, cycles)
+        dfs(child, graph, visited, cycles)
 
     cycles.remove(node)
 
@@ -29,6 +29,6 @@ visited = set()
 try:
     for node in graph:
         dfs(node, graph, visited, set())
-    print('Acyclic:Yes')
+    print('Acyclic: Yes')
 except Exception:
     print('Acyclic: No')

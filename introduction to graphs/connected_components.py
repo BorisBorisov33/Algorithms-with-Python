@@ -22,6 +22,9 @@ def dfs(node, graph, visited, component):
 
 
 for node in range(nodes):
+    if visited[node]:
+        continue
+
     component = []
     dfs(node, graph, visited, component)
-    print(component)
+    print(f"Connected component: {' '.join([str(x) for x in component])}")
