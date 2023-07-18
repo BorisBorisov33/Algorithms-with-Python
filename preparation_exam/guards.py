@@ -41,6 +41,10 @@ has_cycles = False
 sorted_nodes = []
 
 dep = find_dependencies(graph)
+print(dep)
+
+
+
 while dep:
     node_to_remove = find_node_without_dependencies(dep)
     # print(node_to_remove)

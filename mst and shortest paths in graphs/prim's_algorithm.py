@@ -57,4 +57,4 @@ for node in graph:
     prim(node, graph, forest, forest_edges)
 
 for edge in forest_edges:
-    print(f'{edge.first} -> {edge.second}')
+    print(f'{edge.first} - {edge.second}')

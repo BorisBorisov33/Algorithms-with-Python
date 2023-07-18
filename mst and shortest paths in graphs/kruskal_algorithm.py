@@ -30,4 +30,4 @@ for edge in sorted(graph, key=lambda e: e.weight):
         parent[first_node_root] = second_node_root
         forest.append(edge)
 for edge in forest:
-    print(f'{edge.first} -> {edge.second}')
+    print(f'{edge.first} - {edge.second}')

@@ -45,7 +45,7 @@ while not pq.empty():
             pq.put((new_distance, edge.destination))
 
 if distance[target] == float('inf'):
-    print('There is no such path')
+    print('There is no such path.')
 else:
     print(distance[target])
 

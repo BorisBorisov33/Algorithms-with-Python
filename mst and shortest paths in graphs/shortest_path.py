@@ -14,7 +14,7 @@ destination_node = int(input())
 
 visited = [False] * (nodes + 1)
 parent = [None] * (nodes + 1)
-print(visited)
+# print(visited)
 visited[start_node] = True
 queue = deque([start_node])
 # print(queue)
@@ -35,5 +35,5 @@ while node is not None:
     path.appendleft(node)
     node = parent[node]
 
-print(f"Shortest path length is: {len(path)}")
+print(f"Shortest path length is: {len(path) - 1}")
 print(*path, sep=' ')

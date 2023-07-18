@@ -35,6 +35,7 @@ for _ in range(nodes - 1):
         if new_distance < distance[second]:
             distance[second] = new_distance
             parent[second] = first
+
 for first, second, weight in graph:
     new_distance = distance[first] + weight
     if new_distance < distance[second]:

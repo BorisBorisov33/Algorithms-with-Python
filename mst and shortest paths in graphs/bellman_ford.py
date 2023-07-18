@@ -34,20 +34,21 @@ for _ in range(nodes - 1):
             distance[edge.destination] = new_distance
             parent[edge.destination] = edge.source
             updated = True
-        if not updated:
-            break
+    if not updated:
+        break
 
 for edge in graph:
     new_distance = distance[edge.source] + edge.weight
     if new_distance < distance[edge.destination]:
-        print("Negative cycle detected")
+        print("Negative Cycle Detected")
         break
-    else:
-        path = deque()
-        node = target
-        while node is not None:
-            path.appendleft(node)
-            node = parent[node]
+else:
+    path = deque()
+    node = target
+
+    while node is not None:
+        path.appendleft(node)
+        node = parent[node]
 
     print(*path, sep=' ')
     print(distance[target])
