@@ -1,4 +1,6 @@
 from queue import PriorityQueue
+
+
 # use prim algorithm
 class Edge:
     def __init__(self, first, second, weight):
@@ -23,16 +25,15 @@ for _ in range(edges):
     first, second, weight = int(edge_data[0]), int(edge_data[1]), int(edge_data[2])
     graph[first].append(Edge(first, second, weight))
     graph[second].append(Edge(second, first, weight))
+    # if connected
     if len(edge_data) == 4:
         tree.add(first)
         tree.add(second)
-
 
 pq = PriorityQueue()
 for node in tree:
     for edge in graph[node]:
         pq.put(edge)
-
 
 budget_used = 0
 while not pq.empty():
@@ -50,7 +51,7 @@ while not pq.empty():
     if budget_used + min_edge.weight > budget:
         break
 
-    budget_used+=min_edge.weight
+    budget_used += min_edge.weight
 
     tree.add(non_tree_node)
     for edge in graph[non_tree_node]:
