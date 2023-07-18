@@ -1,4 +1,6 @@
 from collections import deque
+
+
 # BFS approach of the task
 def countNotReachusingBFS(gr, n):
     visited = [False] * (n + 1)
