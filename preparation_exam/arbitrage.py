@@ -1,19 +1,10 @@
 from collections import deque
 from queue import PriorityQueue
 
-
-class Pair:
-    def __init__(self, from_coeff, to_coeff, coeff):
-        self.from_coeff = from_coeff
-        self.to_coeff = to_coeff
-        self.coeff = coeff
-
-
 number_of_pairs = int(input())
 
 graph = []
 [graph.append([]) for _ in range(number_of_pairs)]
-# print(graph)
 
 for _ in range(number_of_pairs):
     line = input().split()
@@ -37,9 +28,8 @@ for _ in range(number_of_pairs):
     elif to_curr == 'NZD':
         to_curr = 4
 
-    triple = Pair(from_curr, to_curr, price)
-    graph[from_curr].append(triple)
-    graph[to_curr].append(triple)
+    graph[from_curr].append((from_curr, to_curr, price))
+    graph[to_curr].append((from_curr, to_curr, price))
 
 start_node = input()
 if start_node == 'GBP':
@@ -51,32 +41,31 @@ elif start_node == 'AUD':
 elif start_node == 'NZD':
     start_node = 4
 
+# next_node = start_node + 1
+
 pq = PriorityQueue()
-pq.put((-1, start_node))
+pq.put((1, start_node))
 
 prices = [float('-inf')] * number_of_pairs
-prices[start_node] = 1
+prices[start_node] = -1
 parent = [None] * number_of_pairs
+total = 0
 
 while not pq.empty():
     max_price, node = pq.get()
-    # if node == start_node:
-    #     break
+    for from_node, to_node, coefficient in graph[node]:
+            new_price = max_price * coefficient
+            if new_price > prices[to_node]:
+                prices[to_node] = new_price
+                parent[to_node] = node
+                pq.put((new_price, to_node))
 
-    for triple in graph[node]:
-        child = triple.to_coeff if triple.from_coeff==node else triple.from_coeff
-        new_price = -max_price * triple.coeff
-        if new_price > prices[child]:
-            prices[child] = new_price
-            parent[child] = node
-            pq.put((-new_price, child))
-# change the sign on the upper level
-# print(prices[end_node])
+print(total)
 
 # print the path backward by getting the parent of the node
-# path = deque()
-# # node = end_node
-# while node is not None:
-#     path.appendleft(node)
-#     node = parent[node]
-# print(*path, sep=' -> ')
+path = deque()
+node = 4
+while node is not None:
+    path.appendleft(node)
+    node = parent[node]
+print(*path, sep=' -> ')
