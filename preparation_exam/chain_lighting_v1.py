@@ -1,3 +1,6 @@
+# this is done using the kruskal algorithm but not completely finished
+
+
 class Edge:
     def __init__(self, first, second, weight):
         self.first = first
