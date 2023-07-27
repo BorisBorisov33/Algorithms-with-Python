@@ -46,8 +46,8 @@ elif start_node == 'NZD':
 pq = PriorityQueue()
 pq.put((1, start_node))
 
-prices = [float('-inf')] * number_of_pairs
-prices[start_node] = -1
+prices = [float('+inf')] * number_of_pairs
+prices[start_node] = 0
 parent = [None] * number_of_pairs
 total = 0
 
