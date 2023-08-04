@@ -20,7 +20,7 @@ def bfs(node, graph, visited):
     visited.add(node)
     while queue:
         current_node = queue.popleft()
-        print(current_node, sep=',')
+        print(current_node, end=' ')
 
         for child in graph[current_node]:
             if child not in visited:

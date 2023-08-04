@@ -37,7 +37,7 @@ def find_all_solutions(index, target, words_by_idx, words_count, used_words):
         words_count[word] -= 1
         find_all_solutions(index + len(word), target, words_by_idx, words_count, used_words)
         used_words.pop()
-        words_count[word]+=1
+        words_count[word] += 1
 
 
 find_all_solutions(0, target, words_by_idx, words_count, [])
