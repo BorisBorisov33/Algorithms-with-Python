@@ -1,6 +1,6 @@
 from collections import deque
 
-nums = [int(x) for x in input().split()]
+nums = [int(x) for x in input().split(', ')]
 
 size = [0] * len(nums)
 
@@ -16,7 +16,7 @@ for current in range(1, len(nums)):
     for prev in range(current - 1, -1, -1):
         prev_number = nums[prev]
 
-        if prev_number >= current_number:
+        if prev_number > current_number:
             continue
 
         if size[prev] + 1 >= current_best_size:
